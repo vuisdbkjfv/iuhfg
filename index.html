@@ -1,0 +1,565 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>World Refugee Day: FAQs, Facts, and Resources (WWI & WWII)</title>
+  <meta name="description" content="Learn about World Refugee Day through the lens of World War I and World War II: FAQs, historical facts, and trusted resources." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;        /* slate-900 */
+      --panel: #111827;     /* gray-900 */
+      --text: #e5e7eb;      /* gray-200 */
+      --muted: #9ca3af;     /* gray-400 */
+      --accent: #60a5fa;    /* blue-400 */
+      --accent-2: #34d399;  /* green-400 */
+      --link: #93c5fd;      /* blue-300 */
+      --border: #1f2937;    /* gray-800 */
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(1200px 600px at 10% 0%, #0b1225 0%, var(--bg) 40%, #0c152c 100%);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      padding: 64px 20px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .title {
+      font-size: clamp(28px, 6vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+    }
+
+    .subtitle {
+      font-size: clamp(16px, 2.8vw, 20px);
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(90deg, rgba(96,165,250,.12), rgba(52,211,153,.12));
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .tag small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(17,24,39,.85), rgba(17,24,39,.65));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(10,15,30,.6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .nav-link:hover { border-color: var(--border); background: rgba(17,24,39,.6); }
+
+    section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-size: clamp(22px, 3.6vw, 30px);
+      margin: 0 0 12px;
+    }
+
+    h3 {
+      font-size: clamp(18px, 3vw, 22px);
+      margin: 16px 0 8px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; }
+    }
+
+    .fact-card, .faq-card, .resource-card, .timeline-card {
+      background: linear-gradient(180deg, rgba(17,24,39,.85), rgba(17,24,39,.65));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .label {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .kpi {
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+      margin-top: 8px;
+    }
+
+    .kpi .num {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .kpi .desc {
+      color: var(--muted);
+    }
+
+    ul { padding-left: 18px; }
+    li { margin: 8px 0; }
+
+    .footer {
+      padding: 28px 0 60px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Link cards */
+    .link-row {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 700px) {
+      .link-row { grid-template-columns: 1fr; }
+    }
+    .resource-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    .resource-card a span {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* Gentle hover */
+    .fact-card:hover,
+    .faq-card:hover,
+    .resource-card:hover,
+    .timeline-card:hover {
+      transform: translateY(-1px);
+      transition: transform .2s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container hero">
+      <div>
+        <div class="tag">
+          <span>June 20 — World Refugee Day</span>
+          <small>Honor, learn, act</small>
+        </div>
+        <h1 class="title">World Refugee Day: FAQs, facts, and resources</h1>
+        <p class="subtitle">
+          A focused look at displacement in World War I and World War II—how people survived,
+          how nations responded, and how we can support refugees today.
+        </p>
+        <div class="kpi">
+          <div class="num">Millions displaced</div>
+          <div class="desc">Across WWI and WWII, war reshaped borders and lives, leaving lasting refugee legacies.</div>
+        </div>
+      </div>
+
+      <div class="panel" aria-label="Quick navigation">
+        <h3>Browse this site</h3>
+        <ul>
+          <li><a href="#about">About World Refugee Day</a></li>
+          <li><a href="#wwi">World War I displacement</a></li>
+          <li><a href="#wwii">World War II displacement</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#facts">Key facts</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#take-action">Take action</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <nav role="navigation" aria-label="Primary">
+    <div class="container nav-inner">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#wwi">WWI</a>
+      <a class="nav-link" href="#wwii">WWII</a>
+      <a class="nav-link" href="#faqs">FAQs</a>
+      <a class="nav-link" href="#facts">Facts</a>
+      <a class="nav-link" href="#resources">Resources</a>
+      <a class="nav-link" href="#take-action">Act</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title">About World Refugee Day</h2>
+        <p>
+          World Refugee Day is observed annually on June 20 to honor refugees, recognize their strength,
+          and raise awareness about the protection and support they deserve. It’s a day to learn, reflect,
+          and take practical steps to support people forced to flee.
+        </p>
+
+        <div class="grid cols-2">
+          <div class="fact-card">
+            <span class="label">Why it matters</span>
+            <p>
+              Refugees are people escaping conflict, persecution, or disaster. Many rebuild their lives,
+              contribute to communities, and keep culture and memory alive, even after immense loss.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Historical lens</span>
+            <p>
+              The modern refugee system was shaped by the mass displacement of WWI and WWII, which spurred
+              early international cooperation and later global refugee protections.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wwi" aria-labelledby="wwi-title">
+      <div class="container">
+        <h2 id="wwi-title">World War I displacement</h2>
+        <div class="grid cols-2">
+          <div class="timeline-card">
+            <span class="label">Context</span>
+            <h3>Front lines and civilian flight</h3>
+            <p>
+              WWI’s shifting fronts across Europe, the Middle East, and Africa led civilians to flee combat,
+              occupation, and shortages. Border changes and empire collapses destabilized entire regions.
+            </p>
+          </div>
+          <div class="timeline-card">
+            <span class="label">Impact</span>
+            <h3>Internally displaced and cross-border movement</h3>
+            <p>
+              Millions moved within and across borders, often without formal support systems. Relief
+              efforts were fragmented, laying groundwork for later humanitarian coordination.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid cols-2" style="margin-top: 12px;">
+          <div class="fact-card">
+            <span class="label">Human stories</span>
+            <p>
+              Families navigated scarce food, epidemics, and harsh winters on foot and by rail. Letters,
+              diaries, and camp records show the resilience of people preserving language, craft, and faith.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Aftermath</span>
+            <p>
+              Post-war treaties and redrawn borders created new minorities and stateless persons, challenging
+              governments to address rights and citizenship in the interwar years.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wwii" aria-labelledby="wwii-title">
+      <div class="container">
+        <h2 id="wwii-title">World War II displacement</h2>
+        <div class="grid cols-2">
+          <div class="timeline-card">
+            <span class="label">Scale</span>
+            <h3>Global displacement on an unprecedented level</h3>
+            <p>
+              WWII uprooted tens of millions across Europe, Asia, and North Africa. Forced labor, ethnic
+              persecution, and mass violence created complex refugee flows during and after the war.
+            </p>
+          </div>
+          <div class="timeline-card">
+            <span class="label">Response</span>
+            <h3>International relief and resettlement</h3>
+            <p>
+              Early multinational relief efforts and post-war resettlement programs emerged, informing
+              the creation of modern refugee protections and international institutions in the following decade.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid cols-2" style="margin-top: 12px;">
+          <div class="fact-card">
+            <span class="label">Survival</span>
+            <p>
+              Refugees survived through mutual aid, clandestine routes, and support from local communities,
+              faith groups, and relief networks—often under extreme risk.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Legacy</span>
+            <p>
+              Post-war conventions and refugee status definitions grew from lessons learned, shaping rights
+              to non-refoulement, asylum, education, and work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faqs" aria-labelledby="faqs-title">
+      <div class="container">
+        <h2 id="faqs-title">FAQs</h2>
+        <div class="grid cols-2">
+          <div class="faq-card">
+            <h3>What is the difference between a refugee and an asylum seeker?</h3>
+            <p>
+              A refugee is someone recognized as needing protection across borders due to persecution or conflict.
+              An asylum seeker is someone who has applied for refugee status and awaits a decision.
+            </p>
+          </div>
+
+          <div class="faq-card">
+            <h3>How do WWI and WWII relate to modern refugee protections?</h3>
+            <p>
+              The scale and complexity of displacement in both wars catalyzed international cooperation,
+              laying foundations for post-war conventions, dedicated agencies, and global norms.
+            </p>
+          </div>
+
+          <div class="faq-card">
+            <h3>What challenges do refugees face today?</h3>
+            <p>
+              Access to legal protection, safe housing, healthcare, education, and dignified work—alongside
+              risks of exploitation, xenophobia, and prolonged uncertainty during status processing.
+            </p>
+          </div>
+
+          <div class="faq-card">
+            <h3>How can individuals make a meaningful difference?</h3>
+            <p>
+              Support local resettlement groups, donate to trusted organizations, advocate for fair policies,
+              volunteer skills, and amplify refugee voices in your community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="facts" aria-labelledby="facts-title">
+      <div class="container">
+        <h2 id="facts-title">Key facts</h2>
+        <div class="grid cols-3">
+          <div class="fact-card">
+            <span class="label">Terminology</span>
+            <h3>Refugee vs. internally displaced</h3>
+            <p>
+              Refugees cross international borders for safety; internally displaced persons (IDPs) flee within
+              their own country due to similar threats.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Protection</span>
+            <h3>Non-refoulement</h3>
+            <p>
+              A core principle: people should not be returned to places where they face serious harm or persecution.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Community</span>
+            <h3>Resettlement and integration</h3>
+            <p>
+              Stable housing, language access, and employment pathways enable refugees to thrive and contribute
+              to local economies and culture.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources" aria-labelledby="resources-title">
+      <div class="container">
+        <h2 id="resources-title">Resources</h2>
+        <p>
+          Explore organizations and learning materials to deepen understanding and take practical steps.
+          Verify local availability and program details in your area.
+        </p>
+
+        <div class="link-row" role="list">
+          <div class="resource-card" role="listitem">
+            <h3>Global refugee support</h3>
+            <p>
+              <a href="#" aria-disabled="true">UNHCR <span>(United Nations Refugee Agency)</span></a><br />
+              <small class="muted">Info on global displacement, protection, and policy. Replace # with official link.</small>
+            </p>
+          </div>
+
+          <div class="resource-card" role="listitem">
+            <h3>Resettlement & legal aid</h3>
+            <p>
+              <a href="#" aria-disabled="true">International Rescue Committee <span>(IRC)</span></a><br />
+              <a href="#" aria-disabled="true">Refugee Council USA <span>(RCUSA)</span></a>
+            </p>
+          </div>
+
+          <div class="resource-card" role="listitem">
+            <h3>Education & archives</h3>
+            <p>
+              <a href="#" aria-disabled="true">US Holocaust Memorial Museum</a><br />
+              <a href="#" aria-disabled="true">Imperial War Museums</a>
+            </p>
+          </div>
+
+          <div class="resource-card" role="listitem">
+            <h3>Local action</h3>
+            <p>
+              <a href="#" aria-disabled="true">Find local resettlement agencies</a><br />
+              <a href="#" aria-disabled="true">Community sponsorship programs</a>
+            </p>
+          </div>
+        </div>
+
+        <p style="margin-top: 12px;">
+          Tip: When you replace the placeholder “#” links, use HTTPS URLs from official sites. Add alt text to images
+          and ensure forms are accessible with labels.
+        </p>
+      </div>
+    </section>
+
+    <section id="take-action" aria-labelledby="take-action-title">
+      <div class="container">
+        <h2 id="take-action-title">Take action</h2>
+        <div class="grid cols-2">
+          <div class="fact-card">
+            <span class="label">Donate</span>
+            <p>
+              Contribute to vetted organizations providing housing, legal support, education, and emergency relief.
+              Consider recurring gifts to sustain long-term programs.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Volunteer</span>
+            <p>
+              Offer language tutoring, mentorship, or job coaching. Partner with local groups to support newcomer
+              families and help navigate services.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Advocate</span>
+            <p>
+              Engage with policymakers on fair asylum processes, family reunification, and community-based integration.
+            </p>
+          </div>
+          <div class="fact-card">
+            <span class="label">Amplify</span>
+            <p>
+              Share verified stories and data. Center refugee voices and creativity through events, art, and media.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Built for learning and action on World Refugee Day. Adapt, translate, or reuse this page with attribution.
+      </p>
+      <p>
+        © <span id="year"></span> World Refugee Day Resource Site
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Set the current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
